@@ -102,7 +102,7 @@ filename ft15f001 "c:/wpsoto/wps_submit_ps64.sas";
 data _null_;
  file ft15f001;
  input;
- put _infile;
+ put _infile_;
 cards4;
 %macro utl_submit_ps64x(
       pgm
@@ -161,7 +161,7 @@ filename ft15f001 "c:/wpsoto/wps_psbegin.sas";
 data _null_;
  file ft15f001;
  input;
- put _infile;
+ put _infile_;
 cards4;
 %macro wps_psbegin;
 %utlfkil(c:/temp/ps_pgm.ps);
@@ -181,7 +181,7 @@ filename ft15f001 "c:/wpsoto/wps_psend.sas";
 data _null_;
  file ft15f001;
  input;
- put _infile;
+ put _infile_;
 cards4;
 %macro wps_psend(returnvar=N);
 options noxwait noxsync;
