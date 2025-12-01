@@ -20,25 +20,16 @@ CONTENTS
      wps_pssubmit_ps64
 
 github
-https://tinyurl.com/3cajuh5a
 https://github.com/rogerjdeangelis/utl-dropping-down-to-powershell-from-personal-altair-slc
 
 Related
 github
-https://tinyurl.com/3s2cmxfc
 https://github.com/rogerjdeangelis/utl-calling-r-from-personal-altair-slc-and-integrating-r-with-sql
 
 github
-https://tinyurl.com/yznnxxda
 https://github.com/rogerjdeangelis/utl-calling-python-from-personal-altair-slc-and-integrating-python-with-sql
 
-https://tinyurl.com/yvebd3ee
-https://tinyurl.com/5c7kspet
-https://tinyurl.com/48f5zfwu
-https://tinyurl.com/4p8yy657
-
 macros
-https://tinyurl.com/y9nfugth
 https://github.com/rogerjdeangelis/utl-macros-used-in-many-of-rogerjdeangelis-repositories
 
 /*       _                 _                                       _
@@ -54,10 +45,8 @@ https://github.com/rogerjdeangelis/utl-macros-used-in-many-of-rogerjdeangelis-re
 |_|
 */
 
-&_init_;
-options noerrorabend;
 %wps_psbegin;
-parmcards4;
+cards4;
 dir
 ;;;;
 %wps_psend;
@@ -75,6 +64,31 @@ d-----  9/17/2025  12:07 PM          python_plots
 d-----  9/20/2025   2:49 PM          Samples
 -a----  9/19/2025  12:54 PM   107086 .metadata.zip
 
+
+/*--- the semicolon is needed after the dir ---*/
+%wps_submit_ps64x('
+dir;
+');
+
+OUTPUT
+------
+    Directory: C:\slc
+
+
+Mode           LastWriteTime      Length Name
+----           -------------      ------ ----
+-a----  11/25/2025   3:02 PM      186709 0
+-a----   12/1/2025  12:06 PM           0 current.log
+-a----   12/1/2025   9:02 AM      274742 current.log.bak
+-a----   12/1/2025  12:06 PM           0 current.lst
+-a----   12/1/2025  12:06 PM        1381 current.sas
+-a----   12/1/2025  12:01 PM        1380 current.sas.bak
+-a----  11/30/2025   8:05 AM          11 delete.dat
+-a----   11/4/2025   5:06 PM        3628 dos.js
+-a----   11/4/2025   5:07 PM        2348 idonnot.js
+
+
+
 /*___                                     _          _ _
 |___ \   _ __   _____      _____ _ __ ___| |__   ___| | | _ __ ___   __ _  ___ _ __ ___  ___
   __) | | `_ \ / _ \ \ /\ / / _ \ `__/ __| `_ \ / _ \ | || `_ ` _ \ / _` |/ __| `__/ _ \/ __|
@@ -83,18 +97,20 @@ d-----  9/20/2025   2:49 PM          Samples
         |_|
 */
 
-filename ft15f001 "c:/wpsoto/wps_pssubmit_ps64.sas";
-parmcards4;
-%macro wps_pssubmit_ps64(
+/*--- copy to autocall library ---*/
+filename ft15f001 "c:/wpsoto/wps_submit_ps64.sas";
+data _null_;
+ file ft15f001;
+ input;
+ put _infile;
+cards4;
+%macro utl_submit_ps64x(
       pgm
      ,return=  /* name for the macro variable from Powershell */
-     )/des="Semi colon separated set of python commands - drop down to python";
-
-
+     )/des="Semi colon separated set of Powershell commands - drop down to Powershell";
   /*
       %let pgm='Get-Content -Path d:/txt/back.txt | Measure-Object -Line | clip;';
   */
-
   * write the program to a temporary file;
   filename py_pgm "%sysfunc(pathname(work))/py_pgm.ps1" lrecl=32766 recfm=v;
   data _null_;
@@ -122,7 +138,6 @@ parmcards4;
   run;
   filename rut clear;
   filename py_pgm clear;
-
   * use the clipboard to create macro variable;
   %if "&return" ^= "" %then %do;
     filename clp clipbrd ;
@@ -134,25 +149,40 @@ parmcards4;
      call symputx("&return",_infile_,"G");
     run;quit;
   %end;
-
-%mend wps_pssubmit_ps64;
+%mend utl_submit_ps64x;
 ;;;;
 run;quit;
 
 
+
+
+/*--- copy to autocall library c:/wpsoto ---*/
 filename ft15f001 "c:/wpsoto/wps_psbegin.sas";
-parmcards4;
+data _null_;
+ file ft15f001;
+ input;
+ put _infile;
+cards4;
 %macro wps_psbegin;
 %utlfkil(c:/temp/ps_pgm.ps);
 %utlfkil(c:/temp/ps_pgm.log);
 filename ft15f001 "c:/temp/ps_pgm.ps1";
+data _null_;
+ file ft15f001;
+ input;
+ put _infile_;
 %mend wps_psbegin;
 ;;;;
 run;quit;
 
 
+/*--- copy to autocall library c:/wpsoto ---*/
 filename ft15f001 "c:/wpsoto/wps_psend.sas";
-parmcards4;
+data _null_;
+ file ft15f001;
+ input;
+ put _infile;
+cards4;
 %macro wps_psend(returnvar=N);
 options noxwait noxsync;
 filename rut pipe  "powershell.exe -executionpolicy bypass -file c:/temp/ps_pgm.ps1 >  c:/temp/ps_pgm.log";
@@ -200,3 +230,4 @@ run;quit;
  \___|_| |_|\__,_|
 
 */
+
