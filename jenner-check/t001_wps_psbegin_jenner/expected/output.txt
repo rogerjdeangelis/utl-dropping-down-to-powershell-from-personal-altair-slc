@@ -1,0 +1,7 @@
+                                          Generated PowerShell script content                                           
+
+  Obs                                          LINE
+    1  Get-ChildItem -Path .
+    2  Write-Output 'hello from a generated script'
+    3  Get-Date
+

@@ -1,0 +1,5 @@
+                Generated PowerShell script — equivalent to %wps_psbegin; cards4; dir; ;;;; %wps_psend;                 
+
+  Obs  LINE
+    1  dir
+

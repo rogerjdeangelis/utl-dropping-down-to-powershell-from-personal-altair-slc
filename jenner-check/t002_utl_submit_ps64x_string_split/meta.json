@@ -1,0 +1,8 @@
+{
+  "bundle": "t002_utl_submit_ps64x_string_split",
+  "source_file": "wps_submit_ps64x.sas",
+  "source_blob_sha": "758b578d65b443c93f8bc9a9b01245b8198044f8",
+  "source_commit": "91cd7fadaba5c7df277d30e34979ae408e14b5d6",
+  "tier": "adapted",
+  "notes": "Exercises the SCAN/COUNTC tokenizer plus FILE/PUT loop from utl_submit_ps64x. The macro's input is its own header example ('Get-Content ... | Measure-Object -Line | clip;'). The trailing FILENAME PIPE step that hands the file to powershell.exe is stripped since Jenner sandboxes host-shell escapes; what remains is the SAS string-splitting and file-writing core."
+}

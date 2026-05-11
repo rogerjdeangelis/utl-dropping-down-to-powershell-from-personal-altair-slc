@@ -1,0 +1,5 @@
+                           Tokenized PowerShell statements (input string split on semicolons)                           
+
+  Obs                                                             LINE
+    1  Get-Content -Path d:/txt/back.txt | Measure-Object -Line | clip
+

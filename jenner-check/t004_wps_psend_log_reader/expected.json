@@ -1,0 +1,15 @@
+{
+  "_captured_at": "2026-05-11T17:53:00Z",
+  "_captured_run_id": "r_019e16ac2b1d7c63b39d1e680e2315fa",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Fileref LOG_OUT assigned to ps_pgm.log",
+    "NOTE: Reading from fileref log_in",
+    "Directory: D:\\wpsa",
+    "d-----  9/17/2025  12:07 PM          python_plots",
+    "NOTE: PROC PRINT completed: 7 observations printed, 1 variables"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

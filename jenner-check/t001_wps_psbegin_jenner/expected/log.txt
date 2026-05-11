@@ -1,0 +1,34 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: Fileref FT15F001 assigned to ps_pgm.txt.
+NOTE: DATA _null_
+
+NOTE: Writing to fileref ft15f001 (/tmp/work/ps_pgm.txt)
+NOTE: DATA _null_ completed. Output written to fileref ft15f001 (/tmp/work/ps_pgm.txt)
+NOTE: Fileref PS_IN assigned to ps_pgm.txt.
+NOTE: DATA _null_
+
+NOTE: Reading from fileref ps_in (ps_pgm.txt)
+Get-ChildItem -Path .
+Write-Output 'hello from a generated script'
+Get-Date
+
+NOTE: Read 3 rows from ps_in.
+NOTE: Wrote _null_ (3 rows, 0 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA generated_script
+
+NOTE: Reading from fileref ps_in (ps_pgm.txt)
+
+NOTE: Read 3 rows from ps_in.
+NOTE: Wrote generated_script (3 rows, 1 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC PRINT data=generated_script
+
+NOTE: PROC PRINT completed: 3 observations printed, 1 variables

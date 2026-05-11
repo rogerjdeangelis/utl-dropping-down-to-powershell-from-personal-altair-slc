@@ -1,0 +1,11 @@
+                            Contents of ps_pgm.log (read with INFILE + INPUT + PUT _INFILE_)                            
+
+  Obs                                                LINE
+    1  Directory: D:\wpsa
+    2
+    3  Mode          LastWriteTime   Length Name
+    4  ----          -------------   ------ ----
+    5  d-----  9/17/2025  12:07 PM          python_plots
+    6  d-----  9/20/2025   2:49 PM          Samples
+    7  -a----  9/19/2025  12:54 PM   107086 .metadata.zip
+
