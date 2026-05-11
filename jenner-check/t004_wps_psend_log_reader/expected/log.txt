@@ -1,0 +1,45 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: Fileref LOG_OUT assigned to ps_pgm.log.
+NOTE: DATA _null_
+
+NOTE: Writing to fileref log_out (/tmp/work/ps_pgm.log)
+NOTE: DATA _null_ completed. Output written to fileref log_out (/tmp/work/ps_pgm.log)
+NOTE: Fileref LOG_IN assigned to ps_pgm.log.
+NOTE: DATA _null_
+
+NOTE: Reading from fileref log_in (ps_pgm.log)
+Directory: D:\wpsa
+Directory: D:\wpsa
+ 
+ 
+Mode          LastWriteTime   Length Name
+Mode          LastWriteTime   Length Name
+----          -------------   ------ ----
+----          -------------   ------ ----
+d-----  9/17/2025  12:07 PM          python_plots
+d-----  9/17/2025  12:07 PM          python_plots
+d-----  9/20/2025   2:49 PM          Samples
+d-----  9/20/2025   2:49 PM          Samples
+-a----  9/19/2025  12:54 PM   107086 .metadata.zip
+-a----  9/19/2025  12:54 PM   107086 .metadata.zip
+
+NOTE: Read 7 rows from log_in.
+NOTE: Wrote _null_ (7 rows, 0 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA ps_log
+
+NOTE: Reading from fileref log_in (ps_pgm.log)
+
+NOTE: Read 7 rows from log_in.
+NOTE: Wrote ps_log (7 rows, 1 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC PRINT data=ps_log
+
+NOTE: PROC PRINT completed: 7 observations printed, 1 variables

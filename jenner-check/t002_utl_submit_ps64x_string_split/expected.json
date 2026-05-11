@@ -1,0 +1,15 @@
+{
+  "_captured_at": "2026-05-11T17:51:00Z",
+  "_captured_run_id": "r_019e16aac5b97033bd722fce56e1e213",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Fileref PS_OUT assigned to ps_pgm.ps1",
+    "NOTE: Writing to fileref ps_out",
+    "NOTE: Reading from fileref ps_in",
+    "Get-Content -Path d:/txt/back.txt | Measure-Object -Line | clip",
+    "NOTE: PROC PRINT completed: 1 observations printed, 1 variables"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

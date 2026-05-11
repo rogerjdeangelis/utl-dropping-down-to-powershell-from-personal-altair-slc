@@ -1,0 +1,8 @@
+{
+  "bundle": "t001_wps_psbegin_jenner",
+  "source_file": "wps_psbegin.sas",
+  "source_blob_sha": "4a8a72419a227e44e4ada7cda3f7546680873abd",
+  "source_commit": "91cd7fadaba5c7df277d30e34979ae408e14b5d6",
+  "tier": "adapted",
+  "notes": "Ports wps_psbegin macro to Jenner. The original wraps a DATA _NULL_ + FILE + CARDS4-driven PUT _INFILE_ pattern; here we keep the macro signature and the FILENAME/FILE/PUT mechanics but inline the script lines as literal PUT statements, then read the generated file back to verify. The macro keeps its host name (wps_psbegin_jenner) so it composes with adapted versions of the companion macros."
+}

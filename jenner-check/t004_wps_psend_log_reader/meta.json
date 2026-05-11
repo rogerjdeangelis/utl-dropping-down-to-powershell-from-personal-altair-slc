@@ -1,0 +1,8 @@
+{
+  "bundle": "t004_wps_psend_log_reader",
+  "source_file": "wps_psend.sas",
+  "source_blob_sha": "27515147b4d29e86ff9a64b765639cba36667f3c",
+  "source_commit": "91cd7fadaba5c7df277d30e34979ae408e14b5d6",
+  "tier": "adapted",
+  "notes": "Exercises the read-and-echo log loop at the tail of wps_psend. The original receives the log from `powershell.exe ... > c:/temp/ps_pgm.log`; here we fabricate a small log file (the OUTPUT block from section 1 of the main script) and run the same INFILE/INPUT/PUT _INFILE_ + PUTLOG _INFILE_ idiom that the macro uses to surface the captured stdout."
+}

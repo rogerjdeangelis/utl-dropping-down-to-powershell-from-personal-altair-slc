@@ -1,0 +1,8 @@
+{
+  "bundle": "t003_main_doc_example",
+  "source_file": "utl-dropping-down-to-powershell-from-personal-altair-slc.sas",
+  "source_blob_sha": "59fa2a1896f1bfbde9680c9b9e07baa233ffc8c7",
+  "source_commit": "91cd7fadaba5c7df277d30e34979ae408e14b5d6",
+  "tier": "adapted",
+  "notes": "Reproduces the first half of section 1 of the main script — the inline authoring of a small PowerShell-style script file. The original then hands the file to powershell.exe; we stop at the file-authoring step. The single command in the example is `dir`, taken straight from the original."
+}
